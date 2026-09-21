@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "solar-watch"
+version = "0.1.0"
+description = "Validated solar reference model and reproducible P1 fixed-latitude cams"
+requires-python = ">=3.12"
+dependencies = [
+  "matplotlib==3.10.6",
+  "numpy==2.2.6",
+  "pandas==2.3.2",
+  "pvlib==0.13.1",
+  "scipy==1.18.1",
+  "shapely==2.1.1",
+  "skyfield==1.53",
+  "trimesh==4.8.1",
+  "mapbox-earcut==1.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.4.2",
+]
+
+[project.scripts]
+solar-watch = "solar_watch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

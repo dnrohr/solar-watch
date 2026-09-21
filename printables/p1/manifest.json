@@ -1,0 +1,122 @@
+{
+  "generator": "solar-watch 0.1.0",
+  "reference": {
+    "latitude_deg": 42.1,
+    "longitude_deg": 0.0,
+    "year": 2025,
+    "event_altitude_deg": -0.833,
+    "algorithm": "pvlib 0.13.1 NREL SPA",
+    "validation": "Skyfield 1.53 with JPL DE421",
+    "maximum_absolute_errors": {
+      "sunrise_error_min": 0.0021528833333333336,
+      "sunset_error_min": 0.0021439666666666665,
+      "daylight_error_min": 0.0005637619833578356,
+      "sunrise_azimuth_error_deg": 0.00012064128014088737,
+      "sunset_azimuth_error_deg": 9.38899563607265e-05
+    }
+  },
+  "cams": {
+    "daylight_42p1N_revA": {
+      "source_column": "daylight_min",
+      "datum_value": 545.0,
+      "scale_mm_per_unit": 0.13,
+      "pitch_base_mm": 48.0,
+      "roller_radius_mm": 8.0,
+      "thickness_mm": 8.0,
+      "bearing_bore_mm": 22.2,
+      "profile_samples": 2880,
+      "pressure_angle_max_deg": 18.419908785657828,
+      "pitch_curvature_radius_min_mm": 13.289358414668644,
+      "surface_radius_range_mm": [
+        40.16270564223373,
+        88.1383195477602
+      ]
+    },
+    "sunrise_azimuth_42p1N_revA": {
+      "source_column": "sunrise_azimuth_deg",
+      "datum_value": 55.0,
+      "scale_mm_per_unit": 0.7,
+      "pitch_base_mm": 48.0,
+      "roller_radius_mm": 8.0,
+      "thickness_mm": 8.0,
+      "bearing_bore_mm": 22.2,
+      "profile_samples": 2880,
+      "pressure_angle_max_deg": 17.61206920849823,
+      "pitch_curvature_radius_min_mm": 33.9453137063398,
+      "surface_radius_range_mm": [
+        41.179494822463184,
+        86.57549328400312
+      ]
+    }
+  },
+  "meshes": {
+    "daylight_42p1N_revA": {
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 107104.41920741803,
+      "bounds_mm": [
+        [
+          -87.67562415613814,
+          -63.47158347122877,
+          0.0
+        ],
+        [
+          41.48856128263891,
+          71.49699388059834,
+          8.0
+        ]
+      ]
+    },
+    "sunrise_azimuth_42p1N_revA": {
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 103850.77737192756,
+      "bounds_mm": [
+        [
+          -42.05146945850622,
+          -70.06894678519794,
+          0.0
+        ],
+        [
+          86.22153514320493,
+          62.2977820149897,
+          8.0
+        ]
+      ]
+    },
+    "constant_radius_runout_revA": {
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 87308.15730806533,
+      "bounds_mm": [
+        [
+          -60.0,
+          -60.0,
+          0.0
+        ],
+        [
+          60.0,
+          60.0,
+          8.0
+        ]
+      ]
+    },
+    "608_bearing_fit_21p9_to_22p3_revA": {
+      "watertight": true,
+      "winding_consistent": true,
+      "volume_mm3": 22737.05952326905,
+      "bounds_mm": [
+        [
+          -70.0,
+          -17.0,
+          0.0
+        ],
+        [
+          70.0,
+          17.0,
+          8.0
+        ]
+      ]
+    }
+  }
+}

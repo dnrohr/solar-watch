@@ -1,17 +1,34 @@
 # Software and Tooling
 
-Status: Draft v0.1  
+Status: Implemented for P0/P1
+
 Date: 2026-09-21
 
 ## Required now
 
-No additional software installation is required for the specification phase.
-The development computer already has:
+The host needs only:
 
-- Python 3.12
-- Git
+- Python 3.12; and
+- Git.
 
-A plain text editor is sufficient to review the current Markdown documents.
+`scripts/bootstrap.ps1` creates `.venv` in the checkout and installs the pinned
+free Python dependencies from `requirements-lock.txt`. Nothing is installed
+system-wide.
+
+## P0/P1 implementation
+
+| Task | Tool |
+|---|---|
+| NREL SPA reference | pvlib 0.13.1 |
+| Independent ephemeris validation | Skyfield 1.53 + JPL DE421 |
+| Arrays/tables/interpolation | NumPy 2.2.6, pandas 2.3.2, SciPy (pvlib dependency) |
+| Plots | Matplotlib 3.10.6 |
+| Reproducible mesh generation | Shapely 2.1.1, trimesh 4.8.1, mapbox-earcut 1.0.3 |
+| Automated verification | pytest 8.4.2 |
+
+The committed STL files are generated directly from the compensated follower
+geometry in `src/solar_watch/cam.py`. No desktop CAD installation is required to
+reproduce P1.
 
 ## Proposed free toolchain
 
@@ -41,13 +58,9 @@ FreeCAD, or direct mesh generation.
 - Record tool versions once they begin affecting output files.
 - Prefer file formats that can be regenerated over manually repaired meshes.
 
-## Expected near-term installation
+## Later phases
 
-The first likely additions are Python packages installed into a project-local
-virtual environment. No installation is needed until work starts on the
-reference model. A slicer and CAD application are not required until a physical
-test part is ready.
-
-FreeCAD is the leading desktop-CAD recommendation for this project, but that
-choice is not yet binding. The printer model, build volume, and the user's
-preferred CAD interaction style should be known first.
+A slicer is required to print but is intentionally not selected until the
+printer is known. FreeCAD remains a possible later assembly-CAD tool, but P1
+does not require it. Any future desktop or system-wide installation must be
+discussed before it is required.

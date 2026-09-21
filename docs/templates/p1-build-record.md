@@ -1,0 +1,23 @@
+# P1 Build Record
+
+- Build ID:
+- Date:
+- Operator:
+- Commit:
+- Part filename(s) and SHA-256:
+- Printer / build volume:
+- Nozzle:
+- Material / brand / color / drying:
+- Slicer / version:
+- Layer height / line width:
+- Walls / top / bottom / infill:
+- Temperatures / cooling:
+- Seam / elephant-foot / scaling settings:
+- Selected 608 coupon bore:
+- Runout CW / CCW:
+- Spring and estimated preload:
+- Indicator model / range / resolution:
+- Zero coefficient `b` / span coefficient `a`:
+- Test data attachment:
+- Deviations and observations:
+- Pass/fail statement:

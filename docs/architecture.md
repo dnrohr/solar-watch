@@ -87,11 +87,12 @@ fallback.
 
 ## Prototype sequence
 
-### P0: Numerical model
+### P0: Numerical model — digitally complete
 
-No mechanism. Produces verified tables and error sweeps.
+No mechanism. Produces verified tables and error sweeps. NREL SPA is validated
+for every 2025 day at 42.1 degrees north against Skyfield/JPL DE421.
 
-### P1: Fixed-latitude cam bench
+### P1: Fixed-latitude cam bench — print package complete, physical test pending
 
 - Fixed at 42.1 degrees north
 - Manually rotated date input

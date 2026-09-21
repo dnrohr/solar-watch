@@ -11,6 +11,10 @@ pending.
 
 - D-001: The first fixed-latitude prototype will use 42.1 degrees north. See
   [decision record 0001](decisions/0001-p1-latitude.md).
+- D-003 (P1 portion): use a manual continuous 365-day wheel, advancing clockwise
+  by 360/365 degrees per day. Automatic drive and leap-year behavior remain open.
+- P0 algorithm and calendar: see [decision record 0002](decisions/0002-p0-reference.md).
+- P1 cam/follower geometry: see [decision record 0003](decisions/0003-p1-cam-geometry.md).
 
 ## D-002: Time-reference behavior
 
@@ -30,10 +34,11 @@ Alternatives considered:
 The recommended option best isolates the latitude/date computation while still
 demonstrating a meaningful mechanical time calculation.
 
-## D-003: Date input
+## D-003: Date input (automatic-drive remainder)
 
-**Needed before:** P1 physical design  
-**Recommended default:** manual continuous date wheel with month and day labels
+**Needed before:** an annual automatic drive after P1
+
+**P1 decision:** manual continuous 365-day date input
 
 A continuous wheel allows sub-day testing and avoids the torque and calendar
 complexity of an automatic annual drive. An automatic drive can be added after
@@ -57,14 +62,18 @@ target
 Allowing generous initial depth reduces the risk of compressing the mechanism
 before its necessary cam travel and follower geometry have been measured.
 
-## D-006: Printer constraints
+## D-006: Printer constraints (user input requested)
 
-**Needed before:** designing the first printable test cam  
+**Needed before:** confirming or revising the revision-A print files
+
 **Recommended default:** parts fit a 220 by 220 by 250 mm build volume and use
 0.4 mm nozzle assumptions
 
-The actual printer, nozzle, material, and comfortable print duration will drive
-cam segmentation and tolerances.
+Revision A was generated on the recommended assumption while numerical and
+mechanical work proceeded. The one-piece cams need roughly a 135 mm square
+footprint before brim. The actual printer, usable build volume, nozzle, material,
+and layer height must be recorded before slicing; a smaller bed or different
+nozzle may require revision B.
 
 ## D-007: Visible mechanism
 
