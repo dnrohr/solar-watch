@@ -1,6 +1,6 @@
 # Requirements
 
-Status: Draft v0.1  
+Status: Draft v0.2
 Date: 2026-09-21
 
 The words **shall**, **should**, and **may** distinguish required behavior,
@@ -55,7 +55,7 @@ budget for printed parts.
 | ID | Requirement | Verification |
 |---|---|---|
 | MEC-001 | The integrated display shall fit within a 36 by 24 inch frontal envelope. | Measurement |
-| MEC-002 | Maximum mechanism depth is TBD. | Measurement |
+| MEC-002 | The P2 mechanism shall not exceed 200 mm overall depth. P3 shall revisit this limit. | CAD envelope and measurement |
 | MEC-003 | Major printed assemblies shall be segmentable for the available printer build volume. | CAD inspection |
 | MEC-004 | Cam followers shall be positively preloaded by a spring, gravity, or equivalent method. | Inspection |
 | MEC-005 | Output indications shall provide an accessible zero or calibration adjustment. | Inspection |
@@ -68,7 +68,7 @@ budget for printed parts.
 
 | ID | Requirement | Verification |
 |---|---|---|
-| FAB-001 | Prototype structural and computational parts shall be manufacturable using consumer 3D printing. | Trial fabrication |
+| FAB-001 | P1 prototype parts shall remain manufacturable using consumer 3D printing. P2 precision computational parts may use CNC manufacture under Decision 0005. | File and drawing inspection |
 | FAB-002 | Purchased components should be commonly available metric hardware where practical. | BOM review |
 | FAB-003 | Parts that determine calibration shall include identifying marks and revision identifiers. | Inspection |
 | FAB-004 | Printed cam surfaces shall permit finishing without changing their datum references. | Process trial |
@@ -83,3 +83,18 @@ budget for printed parts.
 | DOC-003 | Reference data and printable cam geometry shall be reproducible from version-controlled source files. | Clean regeneration test |
 | DOC-004 | Assembly and calibration shall be possible without modifying source CAD. | Procedure trial |
 | DOC-005 | Major design decisions shall record context, alternatives, and rationale. | Decision-log review |
+
+## P2 fixed-latitude requirements
+
+| ID | Requirement | Verification |
+|---|---|---|
+| P2-001 | One manual date input shall phase both fixed-latitude cams through one 365-day cycle. | Annual motion sweep |
+| P2-002 | The sunrise-time input shall directly establish the sunrise indication without altering astronomical cam outputs. | Kinematic analysis and test |
+| P2-003 | The sunset indication shall equal sunrise time plus daylight duration modulo 12 hours. | Full-year and input-grid sweep |
+| P2-004 | Sunrise and sunset azimuth hands shall be concentric and equal/opposite about the north-south meridian. | Kinematic sweep |
+| P2-005 | Daylight, time-summing, and azimuth modules shall be independently inspectable and calibratable. | Drawing and procedure inspection |
+| P2-006 | The functional azimuth dial shall be at least 360 mm diameter and the time dials at least 240 mm diameter. | Drawing inspection |
+| P2-007 | P2 shall provide independent zero, span, and date-phase adjustments without modifying source CAD. | Adjustment-range analysis |
+| P2-008 | Custom CNC parts shall define datums, material, finish, critical tolerances, and inspection requirements on drawings. | Drawing review |
+| P2-009 | The design shall distinguish digitally verified performance from fabrication-dependent acceptance evidence. | Verification matrix review |
+| P2-010 | No single module shall require removal of another calibrated module for routine adjustment or inspection. | Assembly/service review |

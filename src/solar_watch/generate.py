@@ -207,7 +207,11 @@ def generate_all(root: Path) -> dict[str, object]:
     hashes = {}
     for path in sorted(
         [reference_path, ephemeris_path, error_path, test_points_path]
-        + list(plots_dir.glob("*.png"))
+        + [
+            plots_dir / "p0_reference_42p1N_2025.png",
+            plots_dir / "p0_validation_errors_42p1N_2025.png",
+            plots_dir / "p1_cam_profiles_42p1N.png",
+        ]
         + list(printable_dir.glob("*.*"))
     ):
         if path.name != "SHA256SUMS.txt":

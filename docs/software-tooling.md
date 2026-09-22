@@ -1,6 +1,6 @@
 # Software and Tooling
 
-Status: Implemented for P0/P1
+Status: Implemented for P0/P1/P2
 
 Date: 2026-09-21
 
@@ -25,6 +25,27 @@ system-wide.
 | Plots | Matplotlib 3.10.6 |
 | Reproducible mesh generation | Shapely 2.1.1, trimesh 4.8.1, mapbox-earcut 1.0.3 |
 | Automated verification | pytest 8.4.2 |
+
+## P2 additions
+
+P2 uses CadQuery 2.6.1 and its pinned open-source OCP stack to produce STEP and
+STL, plus ezdxf 1.4.2 for machinist-facing DXF files. These install only in the
+project-local `.venv`; no system-wide CAD installation is required.
+
+`python -m solar_watch.cli generate-p2 --root .` regenerates the 28 custom
+parts, top-level assembly STEP, profiles, layout plot, manifest, and hashes.
+`scripts/build_p2_pdfs.py` uses ReportLab from the Codex bundled document
+runtime to generate the three release PDFs. Poppler renders every PDF page for
+visual QA. A non-Codex user may install the open-source `reportlab`, `pypdf`,
+and `pdfplumber` packages in a separate project-local environment if rebuilding
+PDFs; the CNC geometry and software verification do not require them.
+
+STEP and DXF writers may vary non-geometric headers between processes. Release
+SHA-256 files identify the exact reviewed deliverables. The clean verifier
+regenerates P2 in a temporary directory and compares STL/profile bytes, DXF
+model-space entities, assembly STEP solid count/volume/bounds, the full motion
+sweep, and the analysis JSON. Thus regeneration checks geometry and engineering
+content without mistaking volatile interchange metadata for a design change.
 
 The committed STL files are generated directly from the compensated follower
 geometry in `src/solar_watch/cam.py`. No desktop CAD installation is required to

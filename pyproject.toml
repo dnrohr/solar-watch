@@ -5,9 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "solar-watch"
 version = "0.1.0"
-description = "Validated solar reference model and reproducible P1 fixed-latitude cams"
+description = "Validated solar reference model and reproducible fixed-latitude mechanisms"
 requires-python = ">=3.12"
 dependencies = [
+  "cadquery==2.6.1",
+  "ezdxf==1.4.2",
   "matplotlib==3.10.6",
   "numpy==2.2.6",
   "pandas==2.3.2",
@@ -33,3 +35,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+filterwarnings = [
+  "ignore::pyparsing.PyparsingDeprecationWarning",
+]

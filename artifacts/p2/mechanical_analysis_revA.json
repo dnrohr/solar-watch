@@ -1,0 +1,121 @@
+{
+  "assumptions": {
+    "cam_preload_max_n": 3.0,
+    "rack_preload_n": 2.0,
+    "shaft_diameter_mm": 8.0,
+    "shaft_cantilever_mm": 25.0,
+    "stainless_modulus_n_per_mm2": 193000.0,
+    "frame_span_mm": 569.0,
+    "frame_weak_axis_i_mm4": 12133.0,
+    "aluminum_modulus_n_per_mm2": 69000.0,
+    "frame_point_load_n": 10.0,
+    "residual_rack_lost_motion_mm": 0.02,
+    "residual_miter_lost_motion_mm": 0.03,
+    "miter_pitch_radius_mm": 10.0
+  },
+  "daylight_cam": {
+    "pitch_radius_min_mm": 48.16383136367632,
+    "pitch_radius_max_mm": 96.47147141917736,
+    "surface_radius_min_mm": 40.163831684992516,
+    "surface_radius_max_mm": 88.47147148953277,
+    "pressure_angle_max_deg": 18.51420800596447,
+    "pitch_curvature_radius_min_mm": 13.228653879396418,
+    "cam_torque_max_nmm": 65.13484627089565,
+    "follower_tangent_force_max_n": 1.0046132425157146
+  },
+  "azimuth_cam": {
+    "pitch_radius_min_mm": 49.1763463081903,
+    "pitch_radius_max_mm": 94.4511831909131,
+    "surface_radius_min_mm": 41.17634675103199,
+    "surface_radius_max_mm": 86.45118334567668,
+    "pressure_angle_max_deg": 17.578981688619326,
+    "pitch_curvature_radius_min_mm": 33.93019615851371,
+    "cam_torque_max_nmm": 64.75271554716892,
+    "follower_tangent_force_max_n": 0.9504449390207628
+  },
+  "force_and_torque": {
+    "date_nominal_worst_case_nmm": 169.88756181806457,
+    "date_design_torque_nmm": 250.0,
+    "date_hand_force_at_50mm_radius_n": 5.0,
+    "sunrise_input_design_torque_nmm": 75.0,
+    "sunrise_hand_force_at_40mm_radius_n": 1.875,
+    "maximum_rack_force_n": 5.0,
+    "safety_factor_on_date_torque": 1.4715615276633918
+  },
+  "travel": {
+    "sunrise_rack_mm": [
+      0.0,
+      92.28428419920017
+    ],
+    "daylight_rack_mm": [
+      0.16390063705051605,
+      48.47082144010082
+    ],
+    "carrier_output_rack_mm": [
+      0.08195031852525803,
+      70.3775528196505
+    ],
+    "azimuth_rack_mm": [
+      1.176358692608597,
+      46.45079222409943
+    ]
+  },
+  "deflection": {
+    "shaft_tip_deflection_mm": 0.00040265479044865034,
+    "frame_midspan_deflection_mm": 0.04584355344409446
+  },
+  "error_budget": {
+    "time_terms": {
+      "numerical_reference_min": 0.0022,
+      "cam_profile_0p05mm_min": 0.3819718634205489,
+      "hub_runout_0p025mm_min": 0.19098593171027445,
+      "follower_0p02mm_min": 0.15278874536821954,
+      "preloaded_rack_lost_motion_min": 0.30557749073643903,
+      "calibration_residual_min": 0.2,
+      "readability_min": 0.5
+    },
+    "time_rss_min": 0.7675317414362621,
+    "time_target_min": 1.0,
+    "azimuth_terms": {
+      "numerical_reference_deg": 0.00013,
+      "cam_profile_0p05mm_deg": 0.0716197243913529,
+      "hub_runout_0p025mm_deg": 0.03580986219567645,
+      "follower_0p02mm_deg": 0.028647889756541162,
+      "spur_lost_motion_deg": 0.028647889756541162,
+      "miter_lost_motion_deg": 0.17188733853924698,
+      "calibration_residual_deg": 0.15,
+      "readability_deg": 0.5
+    },
+    "azimuth_rss_deg": 0.5568648026024614,
+    "azimuth_target_deg": 1.0,
+    "physical_acceptance_pending": true
+  },
+  "clearance": {
+    "dials_inside_envelope": true,
+    "minimum_dial_edge_gap_mm": 39.0,
+    "dial_edge_gaps_mm": {
+      "azimuth_to_sunrise_mm": 104.79655383908596,
+      "azimuth_to_sunset_mm": 104.79655383908596,
+      "azimuth_to_date_mm": 348.0,
+      "sunrise_to_sunset_mm": 39.0,
+      "sunrise_to_date_mm": 71.31128678970438,
+      "sunset_to_date_mm": 71.31128678970438
+    },
+    "guard_to_hand_clearance_mm": 8.0,
+    "depth_margin_mm": 21.5,
+    "cam_profile_to_pilot_radial_clearance_mm": {
+      "daylight_min": 24.163831684992516,
+      "sunrise_azimuth_deg": 25.176346751031993
+    },
+    "time_hand_tip_margin_mm": 15.0,
+    "azimuth_hand_tip_margin_mm": 15.0,
+    "all_pass": true
+  },
+  "sweep": {
+    "rows": 17520,
+    "date_count": 365,
+    "sunrise_setting_count": 48,
+    "maximum_time_kinematic_error_deg": 2.2737367544323206e-13,
+    "maximum_azimuth_mirror_error_deg": 0.27671386200000825
+  }
+}

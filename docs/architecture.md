@@ -1,6 +1,6 @@
 # Provisional System Architecture
 
-Status: Draft v0.1  
+Status: P2 Rev A
 Date: 2026-09-21
 
 ## Functional decomposition
@@ -102,7 +102,7 @@ for every 2025 day at 42.1 degrees north against Skyfield/JPL DE421.
 Purpose: measure printed cam accuracy, follower behavior, backlash, and useful
 mechanical scale.
 
-### P2: Fixed-latitude display
+### P2: Fixed-latitude display — digitally complete, physical build pending
 
 - Three display dials
 - Mirrored azimuth output
@@ -110,6 +110,16 @@ mechanical scale.
 - Time-summing mechanism
 
 Purpose: validate the complete information architecture and dial readability.
+
+P2 detailed design freezes a 609 x 900 x 200 mm portrait assembly. Two 10 mm
+POM-C radial cams share a keyed 12 mm manual date shaft. The daylight output and
+manual sunrise setting enter an opposed-rack translating-pinion summer; its
+carrier position is one half the linear sum and a 7.5 mm output pitch radius
+restores the full angular sum. The sunrise azimuth output drives an 80-tooth
+pinion and a preloaded 1:1 miter reverser drives the concentric sunset hand.
+Independent zero, span, and phase adjustments are accessible behind the guard.
+
+See `p2-design-basis.md`, `p2-interface-control.md`, and Decision 0004.
 
 ### P3: Variable-latitude cam bench
 
@@ -132,10 +142,10 @@ Purpose: isolate and validate the main two-variable mechanism.
 |---|---|---|
 | Date input | 360 degrees per selected reference year | P0/P1 design |
 | Latitude input | Linear carriage position | P3 design |
-| Daylight output | Linear follower displacement | P1 test |
-| Azimuth output | Linear follower displacement | P1 test |
-| Time indication | 12-hour rotary dial | P2 design |
-| Azimuth indication | 360-degree rotary dial | P2 design |
+| Daylight output | 0.1308997 mm/min, 16 mm roller | P2 CAD; physical acceptance pending |
+| Azimuth output | 0.6981317 mm/degree, 16 mm roller | P2 CAD; physical acceptance pending |
+| Time indication | 240 mm 12-hour dial, 5-minute divisions | P2 DXF |
+| Azimuth indication | 360 mm combined dial, 5-degree divisions | P2 DXF |
 
 ## Design rules
 
